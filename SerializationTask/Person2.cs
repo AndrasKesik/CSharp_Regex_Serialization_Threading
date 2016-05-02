@@ -9,22 +9,25 @@ using System.Runtime.Serialization;
 namespace SerializationTask
 {
     [Serializable]
-    class Person : IDeserializationCallback
+    class Person2 : ISerializable
+
+
     {
         string name;
-        [NonSerialized]int age;
+        [NonSerialized]
+        int age;
         int dateOfBirth;
 
-        public Person(string name, int age, int dateOfBirth)
+        public Person2(string name, int age, int dateOfBirth)
         {
             this.name = name;
             this.age = age;
             this.dateOfBirth = dateOfBirth;
         }
 
-        public Person()
+        public Person2()
         {
-            
+
         }
 
         public override string ToString()
@@ -32,9 +35,9 @@ namespace SerializationTask
             return $"Name: {name}\tAge: {age}";
         }
 
-        public void OnDeserialization(object sender)
+        public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
-           
         }
+
     }
 }

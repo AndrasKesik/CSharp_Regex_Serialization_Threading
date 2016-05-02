@@ -14,7 +14,7 @@ namespace SerializationTask
     {
         static void Main(string[] args)
         {
-            Person p1 = new Person("András", 25);
+            Person p1 = new Person("András", 25, 1991);
             Console.WriteLine(p1);
             Serialize(p1);
             Person p2 = Deserialize();
